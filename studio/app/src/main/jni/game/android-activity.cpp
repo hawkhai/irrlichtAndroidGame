@@ -165,7 +165,7 @@ void Java_com_strom_irrlicht_rabbit_IrrlichtTest_nativeSendSensorEvent( JNIEnv* 
     //float X = buf[0]; 
     //core::string positionStr = new string(X); 
  
-    //tPosition = staticText(stringify(X).c_str(),screenHW(),4,4,"sdcard/Irrlicht/media/bigfont.xml");
+    //tPosition = staticText(stringify(X).c_str(),screenHW(),4,4,"/sdcard/Irrlicht/media/bigfont.xml");
     //LOGI("nativeSendSensorEvent");
     if(gameState == IN_GAME) {
         if(smgr != NULL && camera != NULL){

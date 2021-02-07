@@ -140,7 +140,7 @@ void initIrrFile() {
 	LOGI( "initIrrFile1");
 	smgr = device->getSceneManager();
 
-	smgr->loadScene("sdcard/Irrlicht/ghdOne.irr");
+	smgr->loadScene("/sdcard/Irrlicht/ghdOne.irr");
 
 	camera = smgr->addCameraSceneNodeFPS(0, 50.0f
 			,0.1f);
@@ -378,7 +378,7 @@ void initSydney() {
 
 	//以下三段代码，都会引起 ”called unimplemented OpenGL ES API“ Log
 
-	stringc logoFilename = "sdcard/Irrlicht/irrlichtlogoalpha2.tga";
+	stringc logoFilename = "/sdcard/Irrlicht/irrlichtlogoalpha2.tga";
 	guienv->addImage(driver->getTexture((gSdCardPath + logoFilename).c_str()),
 			core::position2d<s32>(10, 40));
 
@@ -467,7 +467,7 @@ void natvieDrawIterationIrrFile() {
 		initIrrFile();
 	}
 
-	driver->beginScene(true, true, SColor(255, 0, 0, 0));
+	driver->beginScene(true, true, SColor(255, 0, 0, 255));
 //	driver->beginScene(true, true, SColor(0,200,200,200));
 	smgr->drawAll();
 	driver->endScene();
@@ -562,11 +562,11 @@ void preloadStuff()
     guienv->drawAll();
     driver->endScene();
     
-    smgr->getMesh("sdcard/Irrlicht/plat0.obj");
-    smgr->getMesh("sdcard/Irrlicht/plat1.obj");
-    smgr->getMesh("sdcard/Irrlicht/plat2.obj");
+    smgr->getMesh("/sdcard/Irrlicht/plat0.obj");
+    smgr->getMesh("/sdcard/Irrlicht/plat1.obj");
+    smgr->getMesh("/sdcard/Irrlicht/plat2.obj");
     loadFonts();
-    driver->getTexture("sdcard/Irrlicht/demo.png");
+    driver->getTexture("/sdcard/Irrlicht/demo.png");
     
     //loadText->remove();
     timer->start();
@@ -581,7 +581,7 @@ void initRabbit(){
 	guienv = device->getGUIEnvironment();
     timer = device->getTimer();
 
-    smgr->loadScene("sdcard/Irrlicht/ghdOne.irr");
+    smgr->loadScene("/sdcard/Irrlicht/ghdOne.irr");
 
     camera = smgr->addCameraSceneNodeFPS(NULL, 0,0);                                            
     

@@ -28,8 +28,17 @@ LOCAL_MODULE := irrlicht
 
 LOCAL_ARM_MODE   := arm 
 #LOCAL_CFLAGS := -O3 -DANDROID_NDK -DDISABLE_IMPORTGL -I/home/ghd214/Downloads/openSource/game/irrlicht/RunRabbitIrrlichtAndroid/project/include -I/home/ghd214/Downloads/openSource/game/irrlicht/RunRabbitIrrlichtAndroid/project/jni/game/source/ -I/home/ghd214/Downloads/openSource/game/irrlicht/RunRabbitIrrlichtAndroid/project/jni/
+#C:\kSource\irrtest\irrlichtAndroidGame\studio\app\src\main\jni\Android.mk
+#C:\kSource\irrtest\irrlichtAndroidGame\include
+#C:\kSource\irrtest\irrlichtAndroidGame\studio\app\src\main\jni\game\source
+LOCAL_CFLAGS := -DANDROID_NDK -DDISABLE_IMPORTGL -I../include -I./game/source/ -I./ -IC:\kSource\irrtest\irrlichtAndroidGame\include -IC:\kSource\irrtest\irrlichtAndroidGame\studio\app\src\main\jni\game\source -I./
 
-LOCAL_CFLAGS := -O3 -DANDROID_NDK -DDISABLE_IMPORTGL -I../include -I./game/source/ -I./
+LOCAL_CFLAGS += -Wno-error=format-security -Wreturn-type
+LOCAL_CPPFLAGS += -Wno-error=c++11-narrowing -Wno-error=format-security -Wreturn-type
+
+LOCAL_CPPFLAGS += -Wno-error=format-security
+LOCAL_CFLAGS += -Wno-error=format-security
+LOCAL_SHORT_COMMANDS := true # ndk 编译报 make (e=87): 参数错误
 
 LOCAL_SRC_FILES := \
      $(ANDROID) \

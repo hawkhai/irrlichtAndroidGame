@@ -15,6 +15,7 @@ import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
+import android.view.ViewGroup;
 
 /** */
 public class IrrlichtTest extends Activity {
@@ -90,6 +91,11 @@ public class IrrlichtTest extends Activity {
         setContentView(mGLView);
         nativeCreateAssetManager(mAssetManager);
         nativeOnCreate();
+        ViewGroup.MarginLayoutParams mly = (ViewGroup.MarginLayoutParams) mGLView.getLayoutParams();
+        mly.leftMargin = 200;
+        mly.rightMargin = 200;
+        mly.topMargin = 200;
+        mly.bottomMargin = 200;
     }
 
     public static void playSound(int i){

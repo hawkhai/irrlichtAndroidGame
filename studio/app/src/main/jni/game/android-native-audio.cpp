@@ -135,8 +135,8 @@ void bqPlayerCallback(SLAndroidSimpleBufferQueueItf bq, void *context)
 // this callback handler is called every time a buffer finishes recording
 void bqRecorderCallback(SLAndroidSimpleBufferQueueItf bq, void *context)
 {
-    assert(bq == bqRecorderBufferQueue);
-    assert(NULL == context);
+    //assert(bq == bqRecorderBufferQueue);
+    //assert(NULL == context);
     // for streaming recording, here we would call Enqueue to give recorder the next buffer to fill
     // but instead, this is a one-time buffer so we stop recording
     SLresult result;
